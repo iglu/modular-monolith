@@ -1,0 +1,19 @@
+apply plugin: "java-library"
+
+repositories {
+	jcenter()
+}
+
+dependencies {
+	compileOnly "org.projectlombok:lombok"
+	testCompileOnly "org.projectlombok:lombok"
+}
+
+
+apply plugin: "io.spring.dependency-management"
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}"
+	}
+}

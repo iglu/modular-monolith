@@ -1,18 +1,7 @@
-apply plugin: "java-library"
-apply plugin: "io.spring.dependency-management"
-
-repositories {
-	jcenter()
-}
-
-dependencyManagement {
-	imports {
-		mavenBom "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}"
-	}
-}
+apply from: "$rootDir/gradle/app-module.gradle"
 
 dependencies {
 	implementation (
-			"org.springframework:spring-context"
+			"org.springframework:spring-context",
 	)
 }

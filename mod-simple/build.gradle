@@ -1,7 +1,1 @@
 apply from: "$rootDir/gradle/app-module.gradle"
-
-dependencies {
-	implementation (
-			"org.springframework:spring-context",
-	)
-}

@@ -7,6 +7,10 @@ repositories {
 dependencies {
 	compileOnly "org.projectlombok:lombok"
 	testCompileOnly "org.projectlombok:lombok"
+
+	implementation (
+			"org.springframework:spring-context",
+	)
 }
 
 

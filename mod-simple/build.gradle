@@ -1,0 +1,18 @@
+apply plugin: "java-library"
+apply plugin: "io.spring.dependency-management"
+
+repositories {
+	jcenter()
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}"
+	}
+}
+
+dependencies {
+	implementation (
+			"org.springframework:spring-context"
+	)
+}

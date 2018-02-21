@@ -13,4 +13,10 @@ Gradle sub-projects and added as *runtime* dependencies to the `boot` module.
 ### Simple Application Modules
 The simplest way to introduce dependencies between modules is to add one module as a *compile* dependency to
 the other module. *Simple* is by no means a derogatory term here, often the simplest solutions is also the best.
-For example see how `mod-web` uses `mod-simple`.   
+For example see how `mod-web` uses `mod-simple`.
+
+### Interface and Implementation Application Modules
+To reduce the coupling between modules, we can add an interface module between the consumer and provider modules.
+This is good for cases when there are multiple implementations of the same interface and a specific implementation
+is chosen at runtime. For example see how `mod-web` uses `mod-translated` and how `mod-translated-en`,
+`mod-translated-et` and `mod-translated-de` implement interfaces from it.

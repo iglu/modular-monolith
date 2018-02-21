@@ -1,0 +1,7 @@
+apply from: "$rootDir/gradle/app-module.gradle"
+
+dependencies {
+	implementation(
+			project(':mod-simple'),
+	)
+}

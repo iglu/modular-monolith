@@ -1,9 +1,7 @@
 apply from: "$rootDir/gradle/app-module.gradle"
 
 dependencies {
-	implementation (
-			"org.springframework.boot:spring-boot-starter-web",
-			project(':mod-simple'),
+	implementation(
 			project(':mod-translated'),
 	)
 }

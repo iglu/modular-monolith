@@ -12,7 +12,12 @@ dependencyManagement {
 }
 
 dependencies {
+	compileOnly (
+			"org.projectlombok:lombok",
+	)
+
 	implementation (
-			"org.springframework.boot:spring-boot-starter-web"
+			"org.springframework.boot:spring-boot-starter-web",
+			project(':mod-simple'),
 	)
 }

@@ -4,10 +4,24 @@ repositories {
 	jcenter()
 }
 
+// We need to evaluate before we can check for plugins
+rootProject.childProjects.values().forEach {
+	if (it.path != this.path) {
+		evaluationDependsOn it.path
+	}
+}
+
 dependencies {
 	compile(
 			'org.springframework.boot:spring-boot-starter',
 	)
+
+	runtime rootProject.childProjects.values().findAll {
+		// Sometimes when a module is deleted from git, then the existing build artifacts prevent it
+		// from being removed during a pull. Checking for java-library plugin avoids somewhat cryptic
+		// Gradle configuration errors while trying to add a non-java project as a dependency.
+		it.plugins.hasPlugin('java-library')
+	}
 
 	testCompile(
 			'org.springframework.boot:spring-boot-starter-test',
